@@ -1,9 +1,11 @@
+# pylint: disable=import-error
 import random
-from jogo.entidade import Entidade
-from jogo.item import Item
 
-class ObjetoGrafico(Entidade):
-    def __init__(self, imagem_path, posicao, escala=None, pode_dropar=False, itens_possiveis=None):
+from jogo.entity import Entity
+
+
+class ObjetoGrafico(Entity):
+    def __init__(self, pode_dropar=False, itens_possiveis=None):
         """
         Inicializa o objeto gráfico.
 
@@ -13,7 +15,7 @@ class ObjetoGrafico(Entidade):
         :param pode_dropar: Define se o objeto pode dropar itens.
         :param itens_possiveis: Lista de itens possíveis para dropar.
         """
-        super().__init__(imagem_path, posicao, escala)
+        
         self.pode_dropar = pode_dropar
         self.itens_possiveis = itens_possiveis if itens_possiveis else []
 
