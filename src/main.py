@@ -2,7 +2,7 @@
 #type: ignore
 import pygame
 from pygame.locals import QUIT
-from jogo.configuracao import SCREEN_WIDTH, SCREEN_HEIGHT
+from jogo.config import SCREEN_WIDTH, SCREEN_HEIGHT
 from jogo.level import Level
 
 def main():

@@ -1,19 +1,19 @@
+# pylint: disable=import-error
+# import pygame
+
+from jogo.player import Player
+
 class Level:
-    def __init__(self, background, player):
+    def __init__(self, background):
         self.background = background
-        self.player = player
         self.enemies = []
+        player = Player
 
     def load(self):
         pass
 
     def update(self):
-        self.player.update()
-        for enemy in self.enemies:
-            enemy.update()
+        pass
 
     def draw(self, screen):
-        screen.blit(self.background, (0, 0))
-        self.player.draw(screen)
-        for enemy in self.enemies:
-            enemy.draw(screen)
+        pass

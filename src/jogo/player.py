@@ -1,9 +1,13 @@
+# pylint: disable=import-error
 import pygame
 
-class Player():
+from jogo.entity import Entity
+
+class Player(Entity):
     def __init__(self):
-        self.health = 100
+        self.health = 100.0
         self.speed = 10.0
+        self.damage = 10.0
 
     keys = pygame.key.get_pressed()
     def move(self, direction):
