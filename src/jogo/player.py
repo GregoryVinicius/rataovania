@@ -5,9 +5,10 @@ from jogo.entity import Entity
 
 class Player(Entity):
     def __init__(self):
-        self.health = 100.0
+        self.base_health = 100.0
         self.speed = 10.0
         self.damage = 10.0
+        self.armor = 0.0
 
     keys = pygame.key.get_pressed()
     def move(self, direction):
@@ -18,8 +19,12 @@ class Player(Entity):
             # self.Player.
     def jump(self):
         pass
-
+    
+    def double_jump(self):
+        pass
 
     def attack(self):
-        # Implement attack logic here
+        pass
+    
+    def dash(self):
         pass
