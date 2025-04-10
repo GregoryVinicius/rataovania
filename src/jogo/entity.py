@@ -1,14 +1,13 @@
 import pygame
 
 class Entity():
-    def __init__(self, imagem_path, position, scale=None, hitbox_size=None):
+    def __init__(self, imagem_path = None, position = None, scale = None, hitbox_size = None):
         """
         Inicializa uma entidade com hitbox.
 
-        :param imagem_path: Caminho para a imagem do sprite.
+        :param sprite: Caminho para a imagem do sprite.
         :param position: Tupla (x, y) representando a posição inicial.
         :param scale: Tupla (largura, altura) para redimensionar a imagem (opcional).
-        :param hitbox_offset: Deslocamento da hitbox em relação ao sprite (x, y).
         :param hitbox_size: Tamanho da hitbox (largura, altura). Se None, usa o tamanho do sprite.
         """ 
         self.position = position

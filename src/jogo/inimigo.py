@@ -2,10 +2,12 @@
 from jogo.entity import Entity
 
 class Enemy(Entity):
-    def __init__(self, health, damage, armor):
+    def __init__(self, name, health, damage, armor, speed):
+        self.name = name
         self.healf = health
         self.damage = damage
         self.armor = armor
+        self.speed = speed
 
     def attack(self):
         pass

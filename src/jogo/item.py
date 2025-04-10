@@ -3,7 +3,7 @@
 from jogo.entity import Entity
 
 class Item(Entity):
-    def __init__(self, name, item_type, consumable, cure, drop_chance):
+    def __init__(self, name = None, item_type = None, consumable = None, cure = None, drop_chance = None):
         self.name = name
         self.item_type = item_type
         self.consumable = consumable 
