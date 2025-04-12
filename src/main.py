@@ -7,7 +7,7 @@ from jogo.level import Level
 
 def main():
     pygame.init()
-    screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+    screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
     pygame.display.set_caption("Ratãovania")
 
     clock = pygame.time.Clock()
@@ -16,7 +16,7 @@ def main():
     running = True
     while running:
         for event in pygame.event.get():  # Adicionei o loop para capturar eventos
-            if event.type == QUIT:
+            if pygame. == QUIT:
                 running = False
 
         # level.update()

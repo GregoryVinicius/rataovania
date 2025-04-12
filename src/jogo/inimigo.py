@@ -1,13 +1,13 @@
 # pylint: disable=import-error
-from jogo.entity import Entity
+from src.jogo.character import Character
 
-class Enemy(Entity):
-    def __init__(self, name, health, damage, armor, speed):
-        self.name = name
-        self.healf = health
-        self.damage = damage
-        self.armor = armor
-        self.speed = speed
+class Enemy(Character):
+    def __init__(self):
+        self.name = "Inimigo"
+        self.base_health = 100.0
+        self.speed = 10.0
+        self.damage = 10.0
+        self.armor = 0.0
 
     def attack(self):
         pass
