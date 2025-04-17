@@ -10,18 +10,18 @@ def main():
     screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
     pygame.display.set_caption("Ratãovania")
 
+    # Carregar a imagem de fundo
+    background = pygame.image.load("../resource/imagem-teste.jpg").convert()
     clock = pygame.time.Clock()
     # level = Level()
 
     running = True
     while running:
-        for event in pygame.event.get():  # Adicionei o loop para capturar eventos
-            if pygame. == QUIT:
+        for event in pygame.event.get():
+            if event.type == QUIT:
                 running = False
 
-        # level.update()
-        # level.draw(screen)
-
+        screen.blit(background, (0, 0))
         pygame.display.flip()
         clock.tick(60)
 

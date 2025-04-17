@@ -5,11 +5,7 @@ from src.jogo.character import Character
 
 class Player(Character):
     def __init__(self):
-        self.name = "RatãoVania"
-        self.base_health = 100.0
-        self.speed = 10.0
-        self.damage = 10.0
-        self.armor = 0.0
+        super().__init__("Player 1", 100, 10, 10, 10)
 
     keys = pygame.key.get_pressed()
 

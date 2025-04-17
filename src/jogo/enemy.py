@@ -3,11 +3,7 @@ from src.jogo.character import Character
 
 class Enemy(Character):
     def __init__(self):
-        self.name = "Inimigo"
-        self.base_health = 100.0
-        self.speed = 10.0
-        self.damage = 10.0
-        self.armor = 0.0
+        super().__init__("Inimigo 1", 100, 10, 10, 10)
 
     def attack(self):
         pass
