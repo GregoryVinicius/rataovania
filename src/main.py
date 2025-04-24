@@ -1,8 +1,10 @@
-# pylint: disable=syntax-error
+# pylint: disable=import-error
 import pygame
+
 from pygame.locals import QUIT
 from jogo.config import SCREEN_WIDTH, SCREEN_HEIGHT
 from jogo.level import Level
+from jogo.player import Player
 
 
 def main():
@@ -11,9 +13,15 @@ def main():
     pygame.display.set_caption("Ratãovania")
 
     # Carregar a imagem de fundo
-    background = pygame.image.load("../resource/imagem-teste.jpg").convert()
+    background = pygame.image.load("../resource/background.png").convert()
     clock = pygame.time.Clock()
-    # level = Level()
+
+    # Instanciar o nível e carregar as plataformas
+    level = Level(background)
+    level.load()
+
+    # Instanciar o jogador
+    player = Player(100, 50, 50, 50)  # Posição inicial e tamanho do jogador
 
     running = True
     while running:
@@ -21,7 +29,14 @@ def main():
             if event.type == QUIT:
                 running = False
 
-        screen.blit(background, (0, 0))
+        # Atualizar o nível e o jogador
+        level.update(screen, player)
+        player.update()
+
+        # Desenhar o nível e o jogador
+        level.draw(screen)
+        player.draw(screen)
+
         pygame.display.flip()
         clock.tick(60)
 

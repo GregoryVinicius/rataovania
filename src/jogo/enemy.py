@@ -1,5 +1,5 @@
 # pylint: disable=import-error
-from src.jogo.character import Character
+from jogo.character import Character
 
 class Enemy(Character):
     def __init__(self):
