@@ -26,9 +26,9 @@ def main():
     running = True
     while running:
         for event in pygame.event.get():
-            if event.type == QUIT:
+            if pygame.key.get_pressed()[pygame.K_ESCAPE]:
                 running = False
-
+ 
         # Atualizar o nível e o jogador
         level.update(screen, player)
         player.update()

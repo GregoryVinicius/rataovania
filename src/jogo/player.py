@@ -20,8 +20,6 @@ class Player(Character):
             self.rect.x += self.velocity
         if keys[pygame.K_UP] or keys[pygame.K_w]:
             self.rect.y -= self.velocity
-        if keys[pygame.K_DOWN] or keys[pygame.K_s]:
-            self.rect.y += self.velocity
             
     def update(self):
         self.apply_gravity()  # Aplica a gravidade ao jogador
