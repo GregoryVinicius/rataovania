@@ -16,6 +16,7 @@ class Level:
         self.background = background
         self.enemies = []
         self.platforms = pygame.sprite.Group()
+        self.load()
         
     def add_platform(self, x, y, width, height, color=(255, 0, 0)):
         platform = Platform(x, y, width, height, color)
@@ -28,7 +29,6 @@ class Level:
 
     def update(self, screen, player):
         self.draw(screen)
-        self.load()
         self.check_collision_with_platforms(player)
 
     def draw(self, screen):
@@ -37,6 +37,7 @@ class Level:
         self.platforms.draw(screen)
 
     def check_collision_with_platforms(self, player):
+        player.on_ground = False  # Assume que está no ar
         collided_platforms = pygame.sprite.spritecollide(player, self.platforms, False)
         for platform in collided_platforms:
             if player.y_velocity > 0 and player.rect.bottom <= platform.rect.top + 10:

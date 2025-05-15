@@ -1,4 +1,3 @@
-# pylint: disable=import-error
 import pygame
 
 from jogo.character import Character
@@ -22,8 +21,8 @@ class Player(Character):
             self.rect.y -= self.velocity
             
     def update(self):
-        self.apply_gravity()  # Aplica a gravidade ao jogador
         self.move()
+        self.apply_gravity()
 
     def draw(self, screen):
         pygame.draw.rect(screen, self.color, self.rect)
