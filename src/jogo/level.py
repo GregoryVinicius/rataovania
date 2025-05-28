@@ -41,6 +41,7 @@ class Level:
         screen.blit(self.background, (0, 0))
         self.platforms.draw(screen)
 
+#Arrumar bug de atravessar a plataforma
     def check_collision_with_platforms(self, player):
         player.on_ground = False
         collided_platforms = pygame.sprite.spritecollide(

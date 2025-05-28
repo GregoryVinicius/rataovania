@@ -33,7 +33,7 @@ class Character(Entity, pygame.sprite.Sprite):
         if gravity is None:
             gravity = self.resultant_force or 0
     
-        max_fall_speed = 15
+        max_fall_speed = 13
     
         if not self.on_ground:
             self.y_velocity += gravity * time

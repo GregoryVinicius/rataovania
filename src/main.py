@@ -6,7 +6,8 @@ from jogo.config import SCREEN_WIDTH, SCREEN_HEIGHT
 from jogo.level import Level
 from jogo.player import Player
 
-
+#fazer uma game maneger
+#fazer uma game world
 def main():
     pygame.init()
     screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)

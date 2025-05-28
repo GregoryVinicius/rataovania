@@ -11,6 +11,7 @@ class Player(Character):
         self.image = pygame.transform.scale(
             self.image, (width, height))
 
+#não atribuir velocidade a posição
     def move(self):
         keys = pygame.key.get_pressed()
 
