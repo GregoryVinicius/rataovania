@@ -12,16 +12,13 @@ def main():
     screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
     pygame.display.set_caption("Ratãovania")
 
-    # Carregar a imagem de fundo
     background = pygame.image.load("../resource/background.png").convert()
     clock = pygame.time.Clock()
-
-    # Instanciar o nível e carregar as plataformas
+    
     level = Level(background)
     level.load()
 
-    # Instanciar o jogador
-    player = Player(100, 50, 50, 50)  # Posição inicial e tamanho do jogador
+    player = Player(100, 50, 50, 50)
 
     running = True
     while running:
@@ -29,11 +26,9 @@ def main():
             if pygame.key.get_pressed()[pygame.K_ESCAPE]:
                 running = False
  
-        # Atualizar o nível e o jogador
         level.update(screen, player)
         player.update()
 
-        # Desenhar o nível e o jogador
         level.draw(screen)
         player.draw(screen)
 

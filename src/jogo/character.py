@@ -3,9 +3,10 @@ from constant import GROUND_LEVEL
 from jogo.entity import Entity
 
 class Character(Entity, pygame.sprite.Sprite):
-    def __init__(self, name, health, damage, defense, velocity, resultant_force=None, y_velocity=0, on_ground=False, x=0, y=0, width=50, height=50):
+    def __init__(self, imagem_path, name, health, damage, defense, velocity, resultant_force=None, y_velocity=0, on_ground=False, x=0, y=0, width=50, height=50):
         super().__init__()
         pygame.sprite.Sprite.__init__(self)
+        self.sprite = imagem_path
         self.name = name
         self.health = health
         self.damage = damage
