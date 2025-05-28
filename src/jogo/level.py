@@ -42,7 +42,7 @@ class Level:
         self.platforms.draw(screen)
 
     def check_collision_with_platforms(self, player):
-        player.on_ground = False  # Assume que está no ar
+        player.on_ground = False
         collided_platforms = pygame.sprite.spritecollide(
             player, self.platforms, False)
         for platform in collided_platforms:

@@ -12,16 +12,13 @@ class Character(Entity, pygame.sprite.Sprite):
         self.damage = damage
         self.defense = defense
         self.velocity = velocity
-        self.resultant_force = resultant_force  # Intensidade da gravidade
-        self.y_velocity = y_velocity  # Velocidade vertical inicial
-        self.on_ground = on_ground  # Verifica se o personagem está no chão
-        self.ground_level = GROUND_LEVEL  # Nível do chão (pode ser ajustado conforme necessário)
-
-        # Cria um retângulo para o personagem (necessário para colisão e movimentação)
+        self.resultant_force = resultant_force
+        self.y_velocity = y_velocity
+        self.on_ground = on_ground
+        self.ground_level = GROUND_LEVEL
         self.rect = pygame.Rect(x, y, width, height)
-        # Opcional: criar uma imagem para desenhar o personagem
         self.image = pygame.Surface((width, height))
-        self.image.fill((0, 255, 0))  # Verde, por exemplo
+        self.image.fill((0, 255, 0))
 
     def attack(self, target):
         damage = self.damage - target.defense
@@ -39,10 +36,10 @@ class Character(Entity, pygame.sprite.Sprite):
         max_fall_speed = 15
     
         if not self.on_ground:
-            self.y_velocity += gravity * time  # Incrementa a velocidade vertical
+            self.y_velocity += gravity * time
             if self.y_velocity > max_fall_speed:
                 self.y_velocity = max_fall_speed
-            self.rect.y += self.y_velocity  # Atualiza a posição com a velocidade
+            self.rect.y += self.y_velocity
     
             if self.rect.y >= self.ground_level:
                 self.rect.y = self.ground_level

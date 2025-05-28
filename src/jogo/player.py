@@ -26,4 +26,4 @@ class Player(Character):
         self.apply_gravity()
 
     def draw(self, screen):
-        screen.blit(self.image, self.rect)  # Desenha a sprite na tela
+        screen.blit(self.image, self.rect)

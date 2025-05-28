@@ -2,13 +2,11 @@ import pygame
 
 class Entity():
     def __init__(self, imagem_path = None, position = None, scale = None, hitbox_size = None):
-        self.position = position
-        self.sprite = imagem_path
-        self.scale = scale
-        self.hitbox_size = hitbox_size
+        pass
         
 
     def atualizar_hitbox(self):
+        pass
 
     def desenhar_hitbox(self, tela, cor=(255, 0, 0)):
         pygame.draw.rect(tela, cor, self.hitbox_size, 1)
