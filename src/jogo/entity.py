@@ -1,15 +1,15 @@
 import pygame
 
 class Entity():
-    def __init__(self, imagem_path = None, position = None, scale = None, hitbox_size = None):
-        pass
-        
+    #criar vetor para posição e tamanho
+    def __init__(self, sprite = None, positon = (None, None), scale = None, hitbox_size = (None, None)):
+        self.sprite = sprite
+        self.position = pygame.math.Vector2(position)
+        self.scale = scale
+        self.hitbox_size = pygame.math.Vector2(hitbox_size)
+       
+    def draw_hitbox(self):
+        self.hitbox_size = pygame.Rect(self.position_x, self.position_y, self.hitbox_size_x, self.hitbox_size_y)
 
-    def atualizar_hitbox(self):
-        pass
-
-    def desenhar_hitbox(self, tela, cor=(255, 0, 0)):
-        pygame.draw.rect(tela, cor, self.hitbox_size, 1)
-
-    def colidiu_com(self, outra_entidade):
+    def collided_with(self, outra_entidade):
         pass
