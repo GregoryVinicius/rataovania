@@ -13,19 +13,8 @@ class Level:
 
     def update(self, screen, player):
         self.draw(screen)
-        self.check_collision_with_platforms(player)
-
+        
+        
     def draw(self, screen):
         screen.blit(self.background, (0, 0))
         Platform.draw(screen)
-        
-#Arrumar bug de atravessar a plataforma
-    def check_collision_with_platforms(self, player):
-        player.on_ground = False
-        collided_platforms = pygame.sprite.spritecollide(
-            player, self.platforms, False)
-        for platform in collided_platforms:
-            if player.y_velocity > 0 and player.rect.bottom <= platform.rect.top + 10:
-                player.rect.bottom = platform.rect.top
-                player.y_velocity = 0
-                player.on_ground = True
