@@ -1,5 +1,5 @@
 import pygame
-from jogo.Platform import Platform
+from game.Platform import Platform
 
 class Level:
     def __init__(self, background):

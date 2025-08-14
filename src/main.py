@@ -2,9 +2,9 @@
 import pygame
 
 from pygame.locals import QUIT
-from jogo.config import SCREEN_WIDTH, SCREEN_HEIGHT
-from jogo.level import Level
-from jogo.player import Player
+from game.config import SCREEN_WIDTH, SCREEN_HEIGHT
+from game.level import Level
+from game.player import Player
 
 #fazer uma game maneger
 #fazer uma game world
@@ -15,7 +15,6 @@ def main():
 
     background = pygame.image.load("../resource/background.png").convert()
     clock = pygame.time.Clock()
-    
     level = Level(background)
     level.load()
 
@@ -26,7 +25,7 @@ def main():
         for event in pygame.event.get():
             if pygame.key.get_pressed()[pygame.K_ESCAPE]:
                 running = False
- 
+
         level.update(screen, player)
         player.update()
 

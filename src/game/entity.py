@@ -10,5 +10,5 @@ class Entity():
     def draw_hitbox(self):
         self.hitbox_size = pygame.Rect(self.position_x, self.position_y, self.hitbox_size_x, self.hitbox_size_y)
 
-    def collided_with(self, ):
-        
+    def collided_with(self, other):
+        return self.hitbox.colliderect(other.hitbox)

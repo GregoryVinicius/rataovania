@@ -1,11 +1,11 @@
 # pylint: disable=import-error
 import random
 
-from jogo.entity import Entity
-from jogo.item import Item
+from game.entity import Entity
+from game.item import Item
 
 
-class Surpimentos(Entity):
+class Suply(Entity):
     def __init__(self, itens_possiveis=None):       
 
     def dropar_item(self):

@@ -1,5 +1,5 @@
 import pygame
-from jogo.entity import Entity
+from game.entity import Entity
 
 
 class Platform(Entity):

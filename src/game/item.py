@@ -1,6 +1,6 @@
 # pylint: disable=too-many-arguments
 # pylint: disable=import-error
-from jogo.entity import Entity
+from game.entity import Entity
 
 class Item(Entity):
     def __init__(self, name = None, item_type = None, consumable = None, cure = None, drop_chance = None):

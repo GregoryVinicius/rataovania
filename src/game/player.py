@@ -1,6 +1,6 @@
 import pygame
 
-from jogo.character import Character
+from game.character import Character
 
 
 class Player(Character):
@@ -20,7 +20,7 @@ class Player(Character):
         if keys[pygame.K_RIGHT] or keys[pygame.K_d]:
             self.rect.x += self.velocity
         if keys[pygame.K_UP] or keys[pygame.K_w]:
-            self.rect.y -= self.velocity
+            self.jump()
 
     def update(self):
         self.move()
