@@ -1,10 +1,10 @@
 import pygame
 
 class Entity():
-    def __init__(self, sprite, positon, scale, hitbox_size):
+    def __init__(self, sprite, positon, hitbox_size):
         self.sprite = sprite
         self.position = pygame.Vector2(positon)
-        self.scale = scale
+        # self.scale = scale
         self.hitbox_size = pygame.Vector2(hitbox_size)
        
     def draw_hitbox(self):
