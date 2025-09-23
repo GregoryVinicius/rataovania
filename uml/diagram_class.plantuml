@@ -1,0 +1,82 @@
+@startuml
+
+' Classe raiz
+abstract class GameObject {
+  +update(dt)
+  +render(screen)
+}
+
+' Entidades físicas
+abstract class Entity {
+  +x : float
+  +y : float
+  +vel_x : float
+  +vel_y : float
+  +on_collision(other)
+}
+
+abstract class Character {
+  +hp : int
+  +speed : float
+  +attack()
+}
+
+class Player {
+  +input()
+  +jump()
+}
+
+class Enemy {
+  +AI()
+}
+
+class Rat
+class Boss
+
+' Interface/UI
+abstract class UIElement {
+  +position
+  +visible : bool
+  +draw()
+}
+
+class Menu {
+  +buttons
+  +navigate()
+}
+
+' Managers
+abstract class Manager {
+  +start()
+  +update()
+  +stop()
+}
+
+class GameManager {
+  +state
+  +load()
+  +save()
+}
+
+class EventManager {
+  +subscribe()
+  +publish()
+}
+
+' Relacionamentos
+GameObject <|-- Entity
+GameObject <|-- UIElement
+GameObject <|-- Manager
+
+Entity <|-- Character
+Character <|-- Player
+Character <|-- Enemy
+Enemy <|-- Rat
+Enemy <|-- Boss
+
+UIElement <|-- Menu
+
+Manager <|-- GameManager
+Manager <|-- EventManager
+
+@enduml
